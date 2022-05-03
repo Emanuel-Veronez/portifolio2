@@ -20,7 +20,7 @@
         
         header {
             margin-left: -150px;
-            margin-top: -350px;
+            margin-top: -150px;
             width: max-content;
             height: max-content;
             overflow: hidden;
@@ -62,10 +62,15 @@
         }
         
         .corTer {
-            background-color: rgb(253, 245, 229);
+            background-color: rgb(190, 120, 120);
         }
         
         p {
+            font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: rgb(0, 0, 0) !important;
+        }
+        
+        h1 {
             font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: rgb(255, 255, 255) !important;
         }
@@ -119,6 +124,21 @@
         .projeto {
             margin-top: 50px;
         }
+        
+        #link-topo {
+            position: relative;
+            right: -90%;
+            bottom: 3rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: #0e155b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            border-radius: .3rem;
+            box-shadow: 0 0.1rem 0.6rem #00000009;
+        }
     </style>
 
 </head>
@@ -139,16 +159,20 @@
         </header>
 
         <nav class=" navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand  textoBranco" href="#">Emanuel Veronez</a>
+            <a id="home" class="navbar-brand  textoBranco" href="#home">Emanuel Veronez</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>      
             </button>
+
+
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
 
+
                 </ul>
                 <ul class="navbar-nav ">
+
                     <li class="nav-item">
                         <a class="nav-link textoBranco" href="#projetos">Projetos</a>
                     </li>
@@ -169,8 +193,8 @@
         <section class="container text-center">
             <div class="container">
                 <img class="" src="" alt="">
-                <h1 class="jumbotron-heading titulosColor">Emanuel Veronez </h1>
-                <p class="lead ">Estudante de análise e desenvolvimento de sistemas. </p>
+                <h1 class="jumbotron-heading text-center titulosColor">Emanuel Veronez </h1>
+                <p class="lead textoBranco">Estudante de análise e desenvolvimento de sistemas. </p>
                 <p>
 
                 </p>
@@ -180,7 +204,7 @@
             </div>
         </section>
         <div class="container">
-            <h2 class="jambotron-heading text-center titulosColor projeto">Projetos</h2>
+            <h2 class="jambotron-heading text-center titulosColor projetos">Projetos</h2>
 
             <div class="row">
                 <div class="col-md-6">
@@ -212,7 +236,7 @@
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="imagens/proje3.jpg" data-holder-rendered="true">
                         <div class="card-body">
-                            <p class="card-text">Projeto de uma box com efeito flutuante.</p>
+                            <p class="card-text ">Projeto de uma box com efeito flutuante.</p>
                             <ul>
                                 <li>HTML</li>
                                 <li>Css</li>
@@ -284,7 +308,7 @@
         <section class="jumbotron text-center  " id="sobre-mim">
             <div class="container">
                 <h2 class="jumbotron-heading titulosColor ">Sobre Mim</h2>
-                <p class="lead">Olá sou Emanuel Veronez, atualmente trabalho como estoquista e estudo análise e desenvolvimento de sistemas na faculdade FECAF de taboão da serra.</p>
+                <h1 class="lead ">Olá sou Emanuel Veronez, atualmente trabalho como estoquista e estudo análise e desenvolvimento de sistemas na faculdade FECAF de taboão da serra.</h1>
 
             </div>
         </section>
@@ -295,7 +319,7 @@
                     Objetivo
                 </h2>
                 <blockquote class="blockquote text-center">
-                    <p class="mb-0">Focado em aprender, buscando oportunidade na área de tecnologia para evoluir cada vez mais. </p>
+                    <p class="mb-0 textoBranco">Focado em aprender, buscando oportunidade na área de tecnologia para evoluir cada vez mais. </p>
                     <footer class="blockquote-footer"> <cite title="Source Title"></cite></footer>
                 </blockquote>
             </div>
@@ -311,10 +335,18 @@
 
                 </div>
             </div>
-            <footer class="container text-center titulosColor textoFooter">
-                <h3 class="text-center titulosColor">Copyrigth &copy;2022, Emanuel Veronez</h3>
-            </footer>
+
+
+
         </section>
+        <footer class="container text-center titulosColor textoFooter">
+            <h3 class="text-center titulosColor">Copyrigth &copy;2022, Emanuel Veronez</h3>
+        </footer>
+
+        <a href="#home" id="link-topo">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
 
 
 
