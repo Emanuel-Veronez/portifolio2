@@ -84,9 +84,11 @@
             height: 2.5rem;
             width: 2.5rem;
             font-size: 2rem;
+            display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 80%;
+            border-radius: 30%;
+            display: inline-flex;
         }
         
         .titulosBrancos {
@@ -139,6 +141,136 @@
             border-radius: .3rem;
             box-shadow: 0 0.1rem 0.6rem #00000009;
         }
+        
+        .hamburguer {
+            /*background-color: red;*/
+            width: 2rem;
+            height: 3rem;
+            position: fixed;
+            z-index: 100;
+            right: 1rem;
+            top: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            cursor: pointer;
+        }
+        
+        .show-menu .hamburguer {
+            right: 16rem;
+        }
+        
+        .line {
+            width: 100%;
+            height: .1rem;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0.1rem 0.1rem 1px #000;
+            transition: transform 1s;
+        }
+        
+        .show-menu #line1 {
+            transform: rotate(45deg) translate(.3rem, .45rem);
+        }
+        
+        .show-menu #line2 {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .show-menu #line3 {
+            transform: rotate(-45deg) translate(.3rem, -.45rem);
+        }
+        
+        .hamburguer span {
+            position: absolute;
+            left: 3rem;
+            height: 2rem;
+            width: 6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #291f82;
+            color: #ffffff;
+            font-family: var(--font-action);
+            opacity: 0;
+        }
+        
+        .hamburguer span::before {
+            content: "";
+            position: absolute;
+            border-right: .5rem solid #271871;
+            border-top: .5rem solid transparent;
+            border-left: .5rem solid transparent;
+            border-bottom: .5rem solid transparent;
+            left: -1rem;
+        }
+        
+        .show-menu .hamburguer:hover span {
+            opacity: 1;
+        }
+        
+        .sidebar {
+            width: 20rem;
+            height: 100vh;
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            right: -40rem;
+            transition: all 1s;
+            z-index: 50;
+        }
+        
+        .show-menu .sidebar {
+            right: 0;
+        }
+        
+        .menu {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .menu-item {
+            text-align: center;
+            margin-bottom: .5rem;
+        }
+        
+        .menu-link {
+            font-family: var(--font-action);
+            font-size: 2rem;
+            color: #555;
+            transition: color 1s;
+        }
+        
+        .menu-link:hover {
+            color: #6a3093;
+        }
+        
+        .social-media {
+            position: absolute;
+            bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .social-media i {
+            background-color: #324680;
+            color: rgba(255, 255, 255, 1);
+            height: 2.5rem;
+            width: 2.5rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: background-color 1s;
+        }
+        
+        .social-media i:hover {
+            background-color: #a044ff;
+        }
     </style>
 
 </head>
@@ -149,6 +281,13 @@
 
     <div class="container" id="projetos">
 
+        <div class="hamburguer">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+            <span>Fechar</span>
+        </div>
+
 
 
 
@@ -158,42 +297,33 @@
             </div>
         </header>
 
-        <nav class=" navbar navbar-expand-lg navbar-light ">
-            <a id="home" class="navbar-brand  textoBranco" href="#home">Emanuel Veronez</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>      
-            </button>
-
-
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-
-
+        <aside class="sidebar">
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item"><a href="#home" class="menu-link">Home</a></li>
+                    <li class="menu-item"><a href="#projetos" class="menu-link">Projetos</a></li>
+                    <li class="menu-item"><a href="#sobre-mim" class="menu-link">Sobre Mim</a></li>
+                    <li class="menu-item"><a href="#depoimentos" class="menu-link">Objetivo</a></li>
+                    <li class="menu-item"><a href="#contatos" class="menu-link">Contato</a></li>
                 </ul>
-                <ul class="navbar-nav ">
-
-                    <li class="nav-item">
-                        <a class="nav-link textoBranco" href="#projetos">Projetos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link textoBranco" href="#sobre-mim">Sobre mim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link textoBranco" href="#depoimentos">Objetivo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link textoBranco" href="#contatos">Contatos</a>
-                    </li>
-                </ul>
-
+            </nav>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100008563080943"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/emanuel-veronez-lima-09105822b"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Emanuel-Veronez"><i class="fab fa-github-alt"></i></a>
             </div>
-        </nav>
+        </aside>
+
+
+
+
+
+
 
         <section class="container text-center">
             <div class="container">
                 <img class="" src="" alt="">
-                <h1 class="jumbotron-heading text-center titulosColor">Emanuel Veronez </h1>
+                <h1 id="home" class="jumbotron-heading text-center titulosColor ">Emanuel Veronez </h1>
                 <p class="lead textoBranco">Estudante de análise e desenvolvimento de sistemas. </p>
                 <p>
 
@@ -208,11 +338,8 @@
 
             <div class="row">
                 <div class="col-md-6">
-
                     <div class="card mb-4 box-shadow">
-
                         <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="imagens/proje1.jpg" data-holder-rendered="true">
-
                         <div class="card-body">
                             <p class="card-text">Um simples projeto que simula um orçamento. </p>
                             <ul>
@@ -353,6 +480,7 @@
     </div>
 
 </body>
+<script src="/script.js"></script>
 
 
 </html>
